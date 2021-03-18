@@ -86,6 +86,12 @@ func (f *Formatter) Format(entry *logrus.Entry) ([]byte, error) {
 		if fileVal != "" {
 			data[logrus.FieldKeyFile] = fileVal
 		}
+
+		data["logging.googleapis.com/sourceLocation"] = map[string]interface{}{
+			"file": entry.Caller.File,
+			"line": entry.Caller.Line,
+			"function": entry.Caller.Function,
+		}
 	}
 
 	var b *bytes.Buffer
