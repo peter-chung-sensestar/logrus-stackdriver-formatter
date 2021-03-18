@@ -1,4 +1,4 @@
-module github.com/joonix/log
+module github.com/peter-chung-sensestar/logrus-stackdriver-formatter
 
 go 1.12
 
